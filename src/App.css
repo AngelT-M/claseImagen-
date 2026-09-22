@@ -1,0 +1,84 @@
+
+
+.app-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  background: white;
+  border-bottom: 1px solid var(--color-bordes);
+}
+
+.logo{
+  font-weight: 700;
+  color: var(--color-primario);
+}
+.header-acctions{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.editor-layout{
+  display: grid;
+  grid-template-columns: 1fr 1.5fr 1fr;
+  gap: 1rem;
+  padding: 1.5rem;
+}
+
+.panel{
+  background: white;
+  border: 1px solid var(--color-bordes);
+  border-radius: var(--radio-borde);
+  padding: 1rem;
+  box-shadow: var(--sombra-suave);
+}
+
+.panel h2{
+  margin-top: 0;
+  font-size: 0.95rem;
+  color: var(--color-texto-secundario);
+}
+.dropzone{
+  border: 2px dashed var(--color-bordes);
+  border-radius: var(--color-bordes);
+  padding: 2rem 1rem;
+  text-align: center;
+  color:  var(--color-texto-secundario);
+}
+
+.vista-previa-area{
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--color-bordes);
+  border-radius: var(--radio-borde);
+}
+.placeholder{
+  color: var(--color-texto-secundario);
+}
+
+.btn-primario{
+  background: var(--color-primario);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radio-borde);
+}
+.btn-secundario{
+  background: white;
+  color: var(--color-texto-principal);
+  border: 1px solid var(--color-bordes);
+  padding: 0.5rem 1rem;
+  border-radius: var(--radio-borde);
+  cursor: pointer;
+}
+
+.btn-accion{
+  background: var(--color-accion);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radio-borde);
+  cursor: pointer;
+}

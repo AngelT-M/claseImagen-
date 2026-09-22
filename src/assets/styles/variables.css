@@ -1,0 +1,18 @@
+:root {
+    --color-primario : #0D9488;
+    --color-acento: #7c3Aed;
+    --color-accion: #ec4899;
+    --color-texto-principal: #118227;
+    --color-texto-secundario: #4b5563;
+    --color-fondo: #E5e7eb;
+    --color-borde: #fafafc;
+    --sombra-suave: 0 1px 3px rgba(0,0,0,0.8);
+}
+
+body{
+    margin: 0;
+    font-family: system-ui, -apple-system, sans-serif;
+    background-color: var(--color-fondo);
+    color: var(--color-texto-principal);
+
+}
