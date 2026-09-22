@@ -1,5 +1,5 @@
-
-
+import { useState } from 'react'
+import './assets/styles/variables.css'
 import './App.css'
 import Header from './assets/components/Header'
 import CargarFotografia from './assets/components/CargarFotografia'
@@ -7,16 +7,16 @@ import VistaPrevia from './assets/components/VistaPrevia'
 import HerramientasEdicion from './assets/components/HerramientasEdicion'
 
 function App() {
+  const[imagenOriginal, setImagenOriginal] = useState(null);
 
   return (
     <div className='app '>
         <Header/>
-        <div className='editor-layout'>
-        <CargarFotografia/>
-         <VistaPrevia/>
+        <main className='editor-layout'> 
+        <CargarFotografia onImagenCargada={setImagenOriginal} />
+         <VistaPrevia imagenOriginal={imagenOriginal} />
         <HerramientasEdicion/>
-       
-        </div>
+        </main>
     </div>
   )
 }
