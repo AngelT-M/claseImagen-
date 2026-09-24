@@ -1,10 +1,10 @@
 import { useState } from "react";
 
-const FORMATOS_PERMITIDOS = ['image/jpeg','image/jpg', 'image/pgn','image/webp'];
+const FORMATOS_PERMITIDOS = ['image/jpeg', 'image/jpg', 'image/png', 'image/webp'];
 const TAMANO_MAXIMO_MB = 10;
 
 function validadArchivo(Archivo){
-    if (FORMATOS_PERMITIDOS.includes(Archivo.type)) {
+    if (!FORMATOS_PERMITIDOS.includes(Archivo.type)) {
         return 'Formato no permitido, Debe ser JPG, PNG o WEBP';
     }
     const tamanoMB = Archivo.size / (1024^1014);
@@ -46,7 +46,7 @@ export default function CargarFotografia({onImagenCargada}){
     function manerDrop(evento){
         evento.preventDefault();
         setArrastrando(false);
-        const Archivo = evento.dataTrasfer.file[0];
+        const Archivo = evento.dataTransfer.files[0];
         if(Archivo) procesarArchivo(Archivo);
     }
 
@@ -63,14 +63,14 @@ export default function CargarFotografia({onImagenCargada}){
         <section className="panel">
             <h3>Cargar Fotografia</h3>
             <div 
-            className={`dropzone ${arrastrando ? 'dropzone-activo':""}`}
+            className={`dropzone ${arrastrando ? ' dropzone-activo':""}`}
             onDrop={manerDrop}
             onDragOver={manejarDragOver}
             onDragLeave={manejarDragLeave}
             >
                 <p className="">Subir</p>
                 <p>Arrastrar una imagen aca</p>
-                <p>o</p>
+                <p className="o-panel">o</p>
                 <label  className="btn-primario">
                     Selecionar un Archivo
                     <input 
@@ -82,12 +82,14 @@ export default function CargarFotografia({onImagenCargada}){
                 </label>
                 <p className="hint">Formatos permitifos JPG * PNG * WEBP</p>
             </div>
+            <div className="noti">
             {error && <p className="error-msg">{error}</p>}
 
             <p className="hint-small">
                 El tamaño maximo de imagen permitido es de 10MB
                 la imagne se procesa en mi navegador
             </p>
+            </div>
         </section>
 
 

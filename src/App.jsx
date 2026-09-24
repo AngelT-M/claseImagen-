@@ -1,23 +1,23 @@
-import { useState } from 'react'
-import './assets/styles/variables.css'
-import './App.css'
-import Header from './assets/components/Header'
-import CargarFotografia from './assets/components/CargarFotografia'
-import VistaPrevia from './assets/components/VistaPrevia'
-import HerramientasEdicion from './assets/components/HerramientasEdicion'
+import { Routes, Route  } from 'react-router-dom';
+/*useState es como memoria que se guarda en ese momento */
+import './styles/variables.css';
+import './App.css';
+import EditorImagenes from './pages/EditorImagenes';
+import Inicio from './pages/Inicio';
+import Galeria from './pages/Galeria';
+import Usuario from './pages/Usuario';
+
+
 
 function App() {
-  const[imagenOriginal, setImagenOriginal] = useState(null);
-
+   
   return (
-    <div className='app '>
-        <Header/>
-        <main className='editor-layout'> 
-        <CargarFotografia onImagenCargada={setImagenOriginal} />
-         <VistaPrevia imagenOriginal={imagenOriginal} />
-        <HerramientasEdicion/>
-        </main>
-    </div>
+    <Routes>  
+      <Route path='/' element={<Inicio/>}></Route>
+      <Route path='/editor' element={<EditorImagenes/>}></Route>
+      <Route path='/galeria' element={<Galeria/>} ></Route>
+      <Route path='/usuario' element={<Usuario/>} ></Route>
+    </Routes>
   )
 }
 

@@ -4,8 +4,9 @@
     --color-accion: #ec4899;
     --color-texto-principal: #118227;
     --color-texto-secundario: #4b5563;
-    --color-fondo: #E5e7eb;
-    --color-borde: #fafafc;
+    --color-fondo: #e5e7eb;
+    --color-bordes: #d1d5db;
+    --radio-borde: 8px;
     --sombra-suave: 0 1px 3px rgba(0,0,0,0.8);
 }
 
