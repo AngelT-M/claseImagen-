@@ -72,6 +72,7 @@ export default function EditorImagenes(){
           brillo={brillo}
           contraste={contraste}
           saturacion={saturacion}
+         
           onImagenProcesada={setImgaenProcesada}
           />
         <HerramientasEdicion
@@ -82,6 +83,9 @@ export default function EditorImagenes(){
           brillo={brillo}
           contraste={contraste}
           saturacion={saturacion}
+          onCambiarBrillo={setBrillo}
+          onCambiarContraste={setContraste}
+          onCambiarSaturacion={setSaturacion}
           onImagenProcesada={setImgaenProcesada}
 
           onRotarIzquierda={()=>rotar(-90)}

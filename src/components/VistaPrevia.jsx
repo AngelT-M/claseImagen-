@@ -1,14 +1,16 @@
 import { useEffect, useRef } from "react";
 
 const FILTROS_CSS={
-    Original: 'none',
+    Original: '',
     Gris: 'grayscale(100%)',
     Sepia: 'sepia(100%)',
     'Blanco y Negro': 'grayscale(100%) contrast(120%)',
     Desenfoque: 'blur(4px)'
 }
 
-export default function VistaPrevia({imagenOriginal,rotacion, volteoH, volteoV, filtroActivo}){
+
+
+export default function VistaPrevia({imagenOriginal,rotacion, volteoH, volteoV, filtroActivo,brillo,contraste,saturacion,onImagenProcesada}){
     const canvasRef = useRef(null);
 
     useEffect(() => {
@@ -36,12 +38,18 @@ export default function VistaPrevia({imagenOriginal,rotacion, volteoH, volteoV, 
             //Inveritr los ejes 
             ctx.scale(volteoH ? -1 : 1, volteoV ? -1: 1);
 
-            ctx.filter = FILTROS_CSS[filtroActivo] || 'none';
+            
+
+            const filtroBase = FILTROS_CSS[filtroActivo] || '';
+            //filtro base
+            ctx.filter = `${filtroBase} brightness(${brillo}%) contrast(${contraste}%) saturate(${saturacion}%)`.trim();
+
             ctx.drawImage(img, -img.width/2, -img.height/2);
             ctx.restore();
         }
         img.src = imagenOriginal;
-    }, [imagenOriginal, rotacion, volteoH, volteoV, filtroActivo]);
+
+    }, [imagenOriginal, rotacion, volteoH, volteoV, filtroActivo, brillo, contraste, saturacion, onImagenProcesada]);
 
 
     return(

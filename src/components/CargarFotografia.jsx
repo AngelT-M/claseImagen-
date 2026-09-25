@@ -7,7 +7,7 @@ function validadArchivo(Archivo){
     if (!FORMATOS_PERMITIDOS.includes(Archivo.type)) {
         return 'Formato no permitido, Debe ser JPG, PNG o WEBP';
     }
-    const tamanoMB = Archivo.size / (1024^1014);
+    const tamanoMB = Archivo.size / (1024*1024);
 
     if (tamanoMB> TAMANO_MAXIMO_MB) {
         return `El Archivo pesa ${tamanoMB} el peso maximo de ser ${TAMANO_MAXIMO_MB}`;
