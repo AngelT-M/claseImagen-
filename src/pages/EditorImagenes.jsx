@@ -25,11 +25,11 @@ export default function EditorImagenes(){
   const[galeria, setGaleria] = useState([]);
 
   /*Funciones que se utilizan par editar la imagen  */
+  /*Funcoion flecha*/
   function rotar(grados){
     setRotacion(prev => (prev+grados+360)%360);
   }
   function voltearHorizontal() {
-    /*Funcoion flecha*/
     setVolteoH(prev => !prev);
   }
   function voltearVertical() {
@@ -46,7 +46,7 @@ export default function EditorImagenes(){
     setSaturacion(100);
   }
 
-  function agregarGaleria(){
+  /*function agregarGaleria(){
     if(!imagenProcesada) return;
 
     setGaleria(prev => [...prev, imagenProcesada]);
@@ -55,13 +55,14 @@ export default function EditorImagenes(){
     setImagenOriginal(null);
     setImgaenProcesada(null);
     restablecer();
-  }
+  }*/
 
     return(
         <div className='app '>
         <Header/>
         <main className='editor-layout'> 
         <CargarFotografia onImagenCargada={setImagenOriginal} />
+        
          <VistaPrevia 
           imagenOriginal={imagenOriginal} 
           rotacion={rotacion}

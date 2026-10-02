@@ -43,7 +43,7 @@ export default function CargarFotografia({onImagenCargada}){
         if(Archivo) procesarArchivo(Archivo);
     }
 
-    function manerDrop(evento){
+    function manerjarDrop(evento){
         evento.preventDefault();
         setArrastrando(false);
         const Archivo = evento.dataTransfer.files[0];
@@ -64,7 +64,7 @@ export default function CargarFotografia({onImagenCargada}){
             <h3>Cargar Fotografia</h3>
             <div 
             className={`dropzone ${arrastrando ? ' dropzone-activo':""}`}
-            onDrop={manerDrop}
+            onDrop={manerjarDrop}
             onDragOver={manejarDragOver}
             onDragLeave={manejarDragLeave}
             >
@@ -83,7 +83,7 @@ export default function CargarFotografia({onImagenCargada}){
                 <p className="hint">Formatos permitifos JPG * PNG * WEBP</p>
             </div>
             <div className="noti">
-            {error && <p className="error-msg">{error}</p>}
+                {error && <p className="error-msg">{error}</p>}
 
             <p className="hint-small">
                 El tamaño maximo de imagen permitido es de 10MB
