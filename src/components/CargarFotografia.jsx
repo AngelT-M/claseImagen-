@@ -84,11 +84,10 @@ export default function CargarFotografia({onImagenCargada}){
             </div>
             <div className="noti">
                 {error && <p className="error-msg">{error}</p>}
-
-            <p className="hint-small">
-                El tamaño maximo de imagen permitido es de 10MB
-                la imagne se procesa en mi navegador
-            </p>
+                <p className="hint-small">
+                    El tamaño maximo de imagen permitido es de 10MB
+                    la imagne se procesa en mi navegador
+                </p>
             </div>
         </section>
 

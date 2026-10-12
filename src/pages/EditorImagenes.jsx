@@ -98,7 +98,7 @@ export default function EditorImagenes(){
           onSelecionarFiltro={setFiltroActivo}
           onRestablecer={restablecer}
           
-          onAgregarGaleria={agregarGaleria}
+          
         />
         </main>
     </div>
