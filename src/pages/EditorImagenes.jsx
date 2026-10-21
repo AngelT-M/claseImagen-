@@ -87,12 +87,14 @@ export default function EditorImagenes(){
           onCambiarBrillo={setBrillo}
           onCambiarContraste={setContraste}
           onCambiarSaturacion={setSaturacion}
+
           onImagenProcesada={setImgaenProcesada}
 
           onRotarIzquierda={()=>rotar(-90)}
           onRotarDerecha={()=>rotar(90)}
           onRotar180={()=>rotar(180)}
           onRegresarRotacion={()=>setRotacion(0)}
+          
           onVoltearHorizontal={voltearHorizontal}
           onVoltearVertical={voltearVertical}
           onSeleccionarFiltro={setFiltroActivo}
