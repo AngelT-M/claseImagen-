@@ -22,7 +22,6 @@ export default function EditorImagenes(){
   const[brillo,setBrillo] = useState(100);
   const[contraste,setContraste] = useState(100);
   const[saturacion,setSaturacion] = useState(100);
-  const[galeria, setGaleria] = useState([]);
 
   /*Funciones que se utilizan par editar la imagen  */
   /*Funcoion flecha*/
