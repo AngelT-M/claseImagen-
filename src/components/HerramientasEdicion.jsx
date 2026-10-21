@@ -22,7 +22,7 @@ export default function HerramientasEdicion({
     onSelecionarFiltro,
     onRestablecer,
 
-    onAgregarGaleria
+    onDescargarImagen
 }){
     return(
         <section className="panel ">
@@ -110,7 +110,7 @@ export default function HerramientasEdicion({
             <div className="acciones-finales">
                 
                 <button className="btn-secundario" disabled={!imagenCargada} onClick={onRestablecer}>Restablecer</button>
-                <button className="btn-accion" onClick={onAgregarGaleria}>Agregar a galeria</button>
+                <button className="btn-accion" disabled={!imagenCargada} onClick={onDescargarImagen}>Descargar imagen</button>
 
             </div>
              

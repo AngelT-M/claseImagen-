@@ -37,6 +37,7 @@ export default function VistaPrevia({imagenOriginal,rotacion, volteoH, volteoV, 
 
             ctx.drawImage(img, -img.width/2, -img.height/2);
             ctx.restore();
+            onImagenProcesada(canvas.toDataURL('image/png'));
         }
         img.src = imagenOriginal;
 
