@@ -95,7 +95,7 @@ export default function EditorImagenes(){
           onRegresarRotacion={()=>setRotacion(0)}
           onVoltearHorizontal={voltearHorizontal}
           onVoltearVertical={voltearVertical}
-          onSelecionarFiltro={setFiltroActivo}
+          onSeleccionarFiltro={setFiltroActivo}
           onRestablecer={restablecer}
           
           

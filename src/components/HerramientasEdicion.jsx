@@ -37,7 +37,7 @@ export default function HerramientasEdicion({
                         {FILSTROS.map(filtro =>(
                             <button
                                 key={filtro}
-                                className={`filtro-item ${filtroActivo ===filtro ? `filtro-activo`: ''} `}
+                                className={`filtro-item ${filtroActivo ===filtro ? `filtro-activo`:""} `}
                                 disabled={!imagenCargada}
                                 onClick={()=>onSelecionarFiltro(filtro)}
                             >{filtro}
