@@ -22,7 +22,6 @@ export default function EditorImagenes(){
   const[brillo,setBrillo] = useState(100);
   const[contraste,setContraste] = useState(100);
   const[saturacion,setSaturacion] = useState(100);
-  const[galeria, setGaleria] = useState([]);
 
   /*Funciones que se utilizan par editar la imagen  */
   /*Funcoion flecha*/
@@ -46,16 +45,15 @@ export default function EditorImagenes(){
     setSaturacion(100);
   }
 
-  /*function agregarGaleria(){
-    if(!imagenProcesada) return;
+  function descargarImagen() {
+  if (!imagenProcesada) return;
 
-    setGaleria(prev => [...prev, imagenProcesada]);
-    console.log(`Galeria Actualizada, total de imagenes:`, galeria.length);
+  const enlace = document.createElement('a');
+  enlace.href = imagenProcesada;
+  enlace.download = 'imagen-editada.png';
+  enlace.click();
+  } 
 
-    setImagenOriginal(null);
-    setImgaenProcesada(null);
-    restablecer();
-  }*/
 
     return(
         <div className='app '>
@@ -100,6 +98,7 @@ export default function EditorImagenes(){
           onSeleccionarFiltro={setFiltroActivo}
           onRestablecer={restablecer}
           
+          onDescargarImagen={descargarImagen}
           
         />
         </main>
